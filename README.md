@@ -11,7 +11,7 @@ The ontology is designed using OWL 2 standards and saved in RDF syntax for compa
 - **Ontology IRI:** `https://github.com/AjayMukundS/LegalOntology`
 - **Version IRI:** `https://github.com/AjayMukundS/LegalOntology/1.6.6`
 - **Version:** v1.6.6
-- **Creator:** Ajay Mukund S and Dr. K. S. Easwarakumar - Department of Computer Science and Engineering, College of Engineering Guindy, Anna University
+- **Creators:** Ajay Mukund S and Dr. K. S. Easwarakumar - Department of Computer Science and Engineering, College of Engineering Guindy, Anna University
 - **Description:** A comprehensive ontology capturing entities and relationships prevalent in Indian court judgments for use in legal NLP, knowledge graphs, and AI applications.
 - **Language:** English
 - **License:** [MIT LICENSE]
