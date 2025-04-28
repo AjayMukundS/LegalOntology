@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/admin/ontologies/2025/3/untitled-ontology-2/"
+     xml:base="http://www.semanticweb.org/admin/ontologies/2025/3/untitled-ontology-2/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://github.com/AjayMukundS/LegalOntology">
+        <owl:versionIRI rdf:resource="https://github.com/AjayMukundS/LegalOntology/1.6.6"/>
+        <dc:creator xml:lang="en">Ajay Mukund S and Dr. K. S. Easwarakumar</dc:creator>
+        <dc:date xml:lang="en">2025-04-28</dc:date>
+        <dc:description xml:lang="en">An ontology to represent legal entities and their relations in court judgments.</dc:description>
+        <dc:publisher xml:lang="en">Department of Computer Science and Engineering, College of Engineering Guindy, Anna University</dc:publisher>
+        <dc:title xml:lang="en">Legal Entity Ontology</dc:title>
+        <rdfs:comment xml:lang="en">Work-in-progress legal ontology for Indian Judiciary use case.</rdfs:comment>
+        <owl:versionInfo xml:lang="en">v1.6.6</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#appealedAgainstRespondent -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#appealedAgainstRespondent">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Petitioner"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Respondent"/>
+        <rdfs:comment xml:lang="en">Petitioner appeals against the Respondent.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#appealsToCourt -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#appealsToCourt">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Petitioner"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Court"/>
+        <rdfs:comment xml:lang="en">Petitioner appeals to a Court.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#caseFiledOnDate -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#caseFiledOnDate">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Date"/>
+        <rdfs:comment xml:lang="en">Date when the case was filed.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#caseHasCaseNumber -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#caseHasCaseNumber">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#CaseNumber"/>
+        <rdfs:comment xml:lang="en">Case linked with its unique identifier.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#citesPrecedent -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#citesPrecedent">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Precedent"/>
+        <rdfs:comment xml:lang="en">Document refers to a past judicial decision.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#courtHearsParty -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#courtHearsParty">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Court"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Litigating_Party"/>
+        <rdfs:comment xml:lang="en">Court hears the parties involved.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#defendedByLawyer -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#defendedByLawyer">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#representedByLawyer"/>
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Respondent"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Lawyer"/>
+        <rdfs:comment xml:lang="en">Respondent&apos;s defense lawyer.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#hasPetitioner -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#hasPetitioner">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Petitioner"/>
+        <rdfs:comment xml:lang="en">Document involves a Petitioner.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#hasRespondent -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#hasRespondent">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Respondent"/>
+        <rdfs:comment xml:lang="en">Document involves a Respondent.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#hasWitness -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#hasWitness">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Witness"/>
+        <rdfs:comment xml:lang="en">Document involves a Witness.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#heardAtCourt -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#heardAtCourt">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Court"/>
+        <rdfs:comment xml:lang="en">Case is heard at a specific Court.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#involvesPerson -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#involvesPerson">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#OtherPerson"/>
+        <rdfs:comment xml:lang="en">Document involves a non-categorized person.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#judgeBelongsToCourt -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#judgeBelongsToCourt">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Judge"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Court"/>
+        <rdfs:comment xml:lang="en">Judge belongs to a particular court.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#judgedBy -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#judgedBy">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Judge"/>
+        <rdfs:comment xml:lang="en">Document was decided by a Judge.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#judgmentDeliveredOn -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#judgmentDeliveredOn">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Date"/>
+        <rdfs:comment xml:lang="en">Date when the judgment was delivered.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#lawyerBelongsToOrganization -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#lawyerBelongsToOrganization">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Lawyer"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Organization_(ORG)"/>
+        <rdfs:comment xml:lang="en">Lawyer is affiliated with a law firm or organization.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#lawyerPracticesInCourt -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#lawyerPracticesInCourt">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Lawyer"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Court"/>
+        <rdfs:comment xml:lang="en">Lawyer is allowed to practice in specific courts.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#locatedInGPE -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#locatedInGPE">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Institution"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#GeopoliticalEntity_(GPE)"/>
+        <rdfs:comment xml:lang="en">Court or Organization is located within a region.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#organizationInvolvedIn -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#organizationInvolvedIn">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Organization_(ORG)"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:comment xml:lang="en">Organization involved in the case or judgment.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#organizationLocatedInGPE -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#organizationLocatedInGPE">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Organization_(ORG)"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#GeopoliticalEntity_(GPE)"/>
+        <rdfs:comment xml:lang="en">Legal organization geographically located somewhere.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#organizationRepresentsParty -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#organizationRepresentsParty">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Organization_(ORG)"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Litigating_Party"/>
+        <rdfs:comment xml:lang="en">Organization legally representing a party.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#partyAppearsBeforeCourt -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#partyAppearsBeforeCourt">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Court"/>
+        <rdfs:comment xml:lang="en">Party appears before a court for hearing.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#precedentCreatedByCourt -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#precedentCreatedByCourt">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Precedent"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Court"/>
+        <rdfs:comment xml:lang="en">Precedent decision created by a Court.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#precedentGivenByJudge -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#precedentGivenByJudge">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Precedent"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Judge"/>
+        <rdfs:comment xml:lang="en">Precedent set by a Judge.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#prosecutedByLawyer -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#prosecutedByLawyer">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#representedByLawyer"/>
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Petitioner"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Lawyer"/>
+        <rdfs:comment xml:lang="en">Petitioner&apos;s lawyer in case.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#refersToProvision -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#refersToProvision">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Provision"/>
+        <rdfs:comment xml:lang="en">Legal document refers to a specific provision.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#relatedToStatute -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#relatedToStatute">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Statute"/>
+        <rdfs:comment xml:lang="en">Legal document refers to a Statute.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#representedByLawyer -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/AjayMukundS/LegalOntology#representedByLawyer">
+        <rdfs:domain rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <rdfs:range rdf:resource="https://github.com/AjayMukundS/LegalOntology#Lawyer"/>
+        <rdfs:comment xml:lang="en">Party is represented legally by a Lawyer.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#CaseNumber -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#CaseNumber">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#MetaData"/>
+        <rdfs:comment xml:lang="en">Unique identifier assigned to a legal case.</rdfs:comment>
+        <rdfs:label xml:lang="en">CaseNumber</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Court -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Court">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Institution"/>
+        <rdfs:comment xml:lang="en">Judicial body where legal cases are heard and decided.</rdfs:comment>
+        <rdfs:label xml:lang="en">Court</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Date -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Date">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#MetaData"/>
+        <rdfs:comment xml:lang="en">Date of occurrence of legal events or judgments.</rdfs:comment>
+        <rdfs:label xml:lang="en">Date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Institution -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Institution">
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Location"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#MetaData"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <rdfs:comment xml:lang="en">Organizations involved in legal administration.</rdfs:comment>
+        <rdfs:label xml:lang="en">Institution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Judge -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Judge">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Lawyer"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#OtherPerson"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Petitioner"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Respondent"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Witness"/>
+        <rdfs:comment xml:lang="en">An official who decides the outcome of legal proceedings.</rdfs:comment>
+        <rdfs:label xml:lang="en">Judge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Lawyer -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Lawyer">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#OtherPerson"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Petitioner"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Respondent"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Witness"/>
+        <rdfs:comment xml:lang="en">Legal representative assisting a party.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lawyer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#LegalDocument -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#LegalDocument">
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Location"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#MetaData"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <rdfs:comment xml:lang="en">Any legal artifact such as statute, judgment, precedent, or provision.</rdfs:comment>
+        <rdfs:label xml:lang="en">Legal Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Litigating_Party -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Litigating_Party">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <rdfs:comment xml:lang="en">A party that formally participates in a legal dispute, either initiating (Petitioner) or responding (Respondent) to legal proceedings. Represents the principal adversarial roles in a case.</rdfs:comment>
+        <rdfs:label xml:lang="en">Litigating Party</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Location -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Location">
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#MetaData"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <rdfs:comment xml:lang="en">Geographical or political region related to a case.</rdfs:comment>
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#MetaData -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#MetaData">
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <rdfs:comment xml:lang="en">Auxiliary information associated with a legal document.</rdfs:comment>
+        <rdfs:label xml:lang="en">MetaData</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#OtherPerson -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#OtherPerson">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Petitioner"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Respondent"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Witness"/>
+        <rdfs:comment xml:lang="en">Other persons associated with a legal case, not categorized elsewhere.</rdfs:comment>
+        <rdfs:label xml:lang="en">OtherPerson</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Party -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Party">
+        <rdfs:comment xml:lang="en">A participant or role-holder in a legal case.</rdfs:comment>
+        <rdfs:label xml:lang="en">Party</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Petitioner -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Petitioner">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Litigating_Party"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Respondent"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Witness"/>
+        <rdfs:comment xml:lang="en">A person or entity initiating a legal action.</rdfs:comment>
+        <rdfs:label xml:lang="en">Petitioner</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Precedent -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Precedent">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:comment xml:lang="en">Previous judicial decision serving as an authority in subsequent cases.</rdfs:comment>
+        <rdfs:label xml:lang="en">Precedent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Provision -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Provision">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:comment xml:lang="en">Specific clauses or sections within a legal statute or regulation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Provision</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Respondent -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Respondent">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Litigating_Party"/>
+        <owl:disjointWith rdf:resource="https://github.com/AjayMukundS/LegalOntology#Witness"/>
+        <rdfs:comment xml:lang="en">A person or entity responding to a legal petition.</rdfs:comment>
+        <rdfs:label xml:lang="en">Respondent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Statute -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Statute">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#LegalDocument"/>
+        <rdfs:comment xml:lang="en">A formal written enactment of legislative authority.</rdfs:comment>
+        <rdfs:label xml:lang="en">Statute</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Witness -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Witness">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Party"/>
+        <rdfs:comment xml:lang="en">A person providing evidence or testimony in a case.</rdfs:comment>
+        <rdfs:label xml:lang="en">Witness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#GeopoliticalEntity_(GPE) -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#GeopoliticalEntity_(GPE)">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Location"/>
+        <rdfs:comment xml:lang="en">A country, city, or region relevant to legal context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Geopolitical Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/AjayMukundS/LegalOntology#Organization_(ORG) -->
+
+    <owl:Class rdf:about="https://github.com/AjayMukundS/LegalOntology#Organization_(ORG)">
+        <rdfs:subClassOf rdf:resource="https://github.com/AjayMukundS/LegalOntology#Institution"/>
+        <rdfs:comment xml:lang="en">Non-court legal organizations involved in law.</rdfs:comment>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
